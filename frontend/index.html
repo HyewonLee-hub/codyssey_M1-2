@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <title>Seoul PM10 AI Assistant</title>
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Seoul PM10 AI Assistant</h1>
+    <p>서울 미세먼지 데이터를 기반으로 답변하는 AI 비서</p>
+  </header>
+
+  <main>
+
+    <!-- 데이터 요약 -->
+    <section>
+      <h2>데이터 요약</h2>
+
+      <div id="summary">
+        데이터를 불러오는 중입니다.
+      </div>
+    </section>
+
+
+    <!-- AI 채팅 -->
+    <section>
+      <h2>AI 채팅</h2>
+
+      <div id="chat-messages"></div>
+
+      <form id="chat-form">
+        <input
+          type="text"
+          id="chat-input"
+          placeholder="미세먼지 데이터에 대해 질문하세요."
+          required
+        >
+
+        <button type="submit">
+          전송
+        </button>
+      </form>
+
+      <p id="chat-loading" hidden>
+        AI가 답변을 생성하고 있습니다...
+      </p>
+    </section>
+
+
+    <!-- 데이터 관리 -->
+    <section>
+      <h2>데이터 관리</h2>
+
+      <form id="data-form">
+
+        <input
+          type="date"
+          id="data-date"
+          required
+        >
+
+        <input
+          type="number"
+          id="data-value"
+          step="0.01"
+          placeholder="PM10"
+          required
+        >
+
+        <input
+          type="text"
+          id="data-memo"
+          placeholder="메모"
+        >
+
+        <button type="submit">
+          데이터 추가
+        </button>
+
+      </form>
+
+      <div id="data-list">
+        데이터를 불러오는 중입니다.
+      </div>
+    </section>
+
+
+    <!-- 대화 기록 -->
+    <section>
+        <h2>이전 대화</h2>
+
+        <button id="new-chat-button">
+            새 대화
+        </button>
+
+        <div id="conversation-list">
+            대화 기록을 불러오는 중입니다.
+        </div>
+    </section>
+
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
